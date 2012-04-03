@@ -15,6 +15,7 @@ function build_couchdb {
   # Add couchdb user account
   useradd -d ${couch_prefix}/var/lib/couchdb couchdb
 
+
   # Change file ownership from root to couchdb user and adjust permissions
   chown -R couchdb: ${couch_prefix}/var/lib/couchdb \
     ${couch_prefix}/var/log/couchdb \
@@ -56,5 +57,5 @@ COUCH_PREFIX="/usr/local"
 cd /opt
 curl http://apache.cu.be/couchdb/${COUCH_VERSION}/apache-couchdb-${COUCH_VERSION}.tar.gz | tar zxv
 cd -
- 
+
 build_couchdb "/opt/apache-couchdb-${COUCH_VERSION}" "$COUCH_PREFIX"
