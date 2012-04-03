@@ -37,10 +37,10 @@ chmod 775 ${COUCH_PREFIX}/etc/couchdb/*.d
 
 if [ -n "$COUCH_PREFIX" -a "$COUCH_PREFIX" != "/" ]
 then
-# Configure logrotate
-ln -s ${COUCH_PREFIX}/etc/logrotate.d/couchdb /etc/logrotate.d/couchdb
-# Configure the init script
-ln -sf ${COUCH_PREFIX}/etc/init.d/couchdb /etc/init.d/couchdb
+  # Configure logrotate
+  ln -s ${COUCH_PREFIX}/etc/logrotate.d/couchdb /etc/logrotate.d/couchdb
+  # Configure the init script
+  ln -sf ${COUCH_PREFIX}/etc/init.d/couchdb /etc/init.d/couchdb
 fi
 
 # Start couchdb

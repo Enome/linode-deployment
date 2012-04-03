@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Install curl
-apt-get install -y curl
-
 # Update apt-get
 curl https://raw.github.com/Enome/linode-deployment/master/apt-get.sh | sh
 
@@ -17,3 +14,6 @@ curl https://raw.github.com/Enome/linode-deployment/master/node.sh | sh
 
 # CouchDB
 curl https://raw.github.com/Enome/linode-deployment/master/couchdb.sh | sh
+
+# Redis
+curl https://raw.github.com/Enome/linode-deployment/master/redis.sh | sh
