@@ -14,3 +14,6 @@ curl https://raw.github.com/Enome/linode-deployment/master/git.sh | sh
 
 # Node.js
 curl https://raw.github.com/Enome/linode-deployment/master/node.sh | sh
+
+# CouchDB
+curl https://raw.github.com/Enome/linode-deployment/master/couchdb.sh | sh
