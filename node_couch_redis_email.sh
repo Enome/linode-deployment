@@ -17,3 +17,6 @@ curl https://raw.github.com/Enome/linode-deployment/master/couchdb.sh | sh
 
 # Redis
 curl https://raw.github.com/Enome/linode-deployment/master/redis.sh | sh
+
+# Deployment
+curl https://raw.github.com/Enome/linode-deployment/master/deployment.sh | sh
