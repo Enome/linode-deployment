@@ -1,2 +1,3 @@
 #!/bin/sh
-git --work-tree="/root/app/" checkout -f master
+mkdir /root/apps/app
+git --work-tree="/root/apps/app" checkout -f master
