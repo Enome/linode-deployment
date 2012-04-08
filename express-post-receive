@@ -1,6 +1,13 @@
 #!/bin/sh
-APP="first"
-mkdir -p /root/apps/${APP}
-git --work-tree="/root/apps/${APP}" checkout -f master
-cd /root/apps/${APP}
+app="first"
+branch=$(git rev-parse --symbolic --abbrev-ref $1)
+
+mkdir -p /root/apps/${app}
+git --work-tree="/root/apps/${app}" checkout -f ${branch}
+cd /root/apps/${app}
+
+# Install dependencies
+npm install
+
+# Run server
 make server-production
