@@ -1,3 +1,6 @@
 #!/bin/sh
-mkdir -p /root/apps/app
-git --work-tree="/root/apps/app" checkout -f master
+APP="first"
+mkdir -p /root/apps/${APP}
+git --work-tree="/root/apps/${APP}" checkout -f master
+cd /root/apps/${APP}
+make server-production
