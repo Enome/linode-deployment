@@ -2,12 +2,12 @@
 app="first"
 branch=$(git rev-parse --symbolic --abbrev-ref $1)
 
+echo '--------------'
+echo ${branch}
+echo '-------------'
+
 mkdir -p /root/apps/${app}
 git --work-tree="/root/apps/${app}" checkout -f ${branch}
-
-# Install dependencies
-cd /root/apps/${app}
-npm install
 
 # Run server
 make server-production
