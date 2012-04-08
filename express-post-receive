@@ -1,13 +1,14 @@
 #!/bin/sh
+
 app="first"
-branch=$(git rev-parse --symbolic --abbrev-ref $1)
+path="/root/apps/$app"
 
-echo '--------------'
-echo ${branch}
-echo '-------------'
+#checkout working tree
 
-mkdir -p /root/apps/${app}
-git --work-tree="/root/apps/${app}" checkout -f ${branch}
+mkdir -p $path
+git --work-tree="$path" checkout -f
 
 # Run server
+
+cd $path
 make server-production
