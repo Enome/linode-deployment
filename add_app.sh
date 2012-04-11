@@ -27,3 +27,19 @@ chmod +x $pr
 # Logs
 
 mkdir -p /root/logs/$name
+
+# Add upstart
+cat > /etc/init/$name.conf << EOF
+#!upstart
+
+description "Express Application"
+author      "Geert"
+
+start on (local-filesystems and net-device-up IFACE=eth0)
+stop  on shutdown
+
+script
+  export NODE_ENV="production"
+  exec /root/applications/$name/mon.sh
+end script
+EOF
