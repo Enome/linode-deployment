@@ -1,9 +1,0 @@
-#!/bin/sh
-
-app="first"
-path="/root/apps/$app"
-
-#checkout working tree
-
-mkdir -p $path
-git --work-tree="$path" checkout -f
