@@ -17,6 +17,11 @@ app="/root/applications/$name"
 mkdir -p $app 
  
 # Add post-receive 
+
 pr=$repo/hooks/post-receive 
 echo "git --work-tree=\"$app\" checkout -f" > $pr
 chmod +x $pr
+
+# Logs
+
+mkdir -p root/logs/$name

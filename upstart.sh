@@ -13,6 +13,6 @@ instance \$service
 
 script
   export NODE_ENV="production"
-  exec /usr/bin/coffee /root/apps/krafters/\$service.coffee >> /root/logs/krafters/\$service.log 2>&1
+  exec /usr/bin/coffee /root/applications/\$service >> /root/logs/\$service.log 2>&1
 end script
 EOF
