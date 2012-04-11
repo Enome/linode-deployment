@@ -24,4 +24,4 @@ chmod +x $pr
 
 # Logs
 
-mkdir -p root/logs/$name
+mkdir -p /root/logs/$name
