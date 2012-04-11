@@ -20,6 +20,8 @@ mkdir -p $app
 
 pr=$repo/hooks/post-receive 
 echo "git --work-tree=\"$app\" checkout -f" > $pr
+echo "cd $app" >> $pr
+echo "make reload" >> $pr
 chmod +x $pr
 
 # Logs
