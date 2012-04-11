@@ -40,6 +40,6 @@ stop  on shutdown
 
 script
   export NODE_ENV="production"
-  exec /root/applications/$name/mon.sh
+  exec /usr/bin/coffee /root/applications/$name/website.coffee >> /root/logs/$name/website.coffee 2>&1
 end script
 EOF
