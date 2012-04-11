@@ -18,10 +18,5 @@ mkdir -p $app
  
 # Add post-receive 
 pr=$repo/hooks/post-receive 
-touch $pr
+echo "git --work-tree=\"$app\" checkout -f" > $pr
 chmod +x $pr
-
-cat > $pr << EOF 
-#checkout working tree 
-git --work-tree="$app" checkout -f 
-EOF 
