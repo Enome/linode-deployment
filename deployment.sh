@@ -1,17 +1,26 @@
-#!/bin/sh
-
-echo -n 'Name of application:'
-read app
-
-# Bare repository
-
-mkdir /root/repository
-mkdir /root/repository/${app}
-cd /root/repository/${app}
-git init --bare
-
-# Add post-receive
-
-cd hooks
-curl https://raw.github.com/Enome/linode-deployment/master/express-post-receive > post-receive
-chmod +x post-receive
+#!/bin/sh 
+ 
+echo -n "Application name:" 
+read name 
+ 
+# Bare repository 
+ 
+repo="/root/repositories/$name" 
+echo $repo 
+mkdir -p $repo 
+cd $repo 
+git init --bare 
+ 
+# Application Dir 
+ 
+app="/root/applications/$name" 
+mkdir -p $app 
+ 
+# Add post-receive 
+ 
+cat > $repo/hooks/post-receive << EOF 
+#checkout working tree 
+git --work-tree="$app" checkout -f 
+EOF 
+ 
+chmod +x $repo/hooks/post-receive 

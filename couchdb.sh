@@ -3,7 +3,7 @@
 apt-get -y install curl build-essential
 apt-get -y install libmozjs-dev libicu-dev libcurl4-gnutls-dev libtool erlang-dev erlang
 
-COUCH_VERSION="1.1.1"
+COUCH_VERSION="1.1.2"
 COUCH_BIND_ADDRESS="0.0.0.0"
 COUCH_PORT="5984"
 COUCH_HOST="http://$COUCH_BIND_ADDRESS:$COUCH_PORT"
