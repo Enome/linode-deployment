@@ -1,6 +1,9 @@
-app="first"
+#!/bin/sh
 
-# Bare respo
+echo -n 'Name of application:'
+read app
+
+# Bare repository
 
 mkdir /root/repository
 mkdir /root/repository/${app}

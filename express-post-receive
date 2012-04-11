@@ -7,8 +7,3 @@ path="/root/apps/$app"
 
 mkdir -p $path
 git --work-tree="$path" checkout -f
-
-# Run server
-
-cd $path
-make server-production

@@ -3,6 +3,9 @@
 # Update apt-get
 curl https://raw.github.com/Enome/linode-deployment/master/apt-get.sh | sh
 
+# Ssh
+curl https://raw.github.com/Enome/linode-deployment/master/ssh.sh | sh
+
 # Dependencies
 curl https://raw.github.com/Enome/linode-deployment/master/dependencies.sh | sh
 
@@ -20,3 +23,11 @@ curl https://raw.github.com/Enome/linode-deployment/master/redis.sh | sh
 
 # Deployment
 curl https://raw.github.com/Enome/linode-deployment/master/deployment.sh | sh
+
+# Varnish ( reserved proxy )
+curl https://raw.github.com/Enome/linode-deployment/master/varnish.sh | sh
+
+# Upstart
+curl https://raw.github.com/Enome/linode-deployment/master/upstart.sh | sh
+
+# Firewall
