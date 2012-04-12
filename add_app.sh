@@ -26,7 +26,7 @@ do
   branch=\$(echo "\$ref" | sed 's/refs\/heads\///')
 done
 
-git --work-tree="/root/applications/krafters" checkout $branch -f
+git --work-tree="/root/applications/krafters" checkout \$branch -f
 cd /root/applications/krafters
 make reload
 EOF
