@@ -19,9 +19,17 @@ mkdir -p $app
 # Add post-receive 
 
 pr=$repo/hooks/post-receive 
-echo "git --work-tree=\"$app\" checkout -f" > $pr
-echo "cd $app" >> $pr
-echo "make reload" >> $pr
+cat > $pr << EOF
+#!/bin/sh
+while read oldrev newrev ref
+do
+  branch=\$(echo "\$ref" | sed 's/refs\/heads\///')
+done
+
+git --work-tree="/root/applications/krafters" checkout $branch -f
+cd /root/applications/krafters
+make reload
+EOF
 chmod +x $pr
 
 # Logs
@@ -37,8 +45,6 @@ author      "Geert"
 
 start on (local-filesystems and net-device-up IFACE=eth0)
 stop  on shutdown
-
-respawn
 
 script
   export NODE_ENV="production"
