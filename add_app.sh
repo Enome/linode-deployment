@@ -46,6 +46,8 @@ author      "Geert"
 start on (local-filesystems and net-device-up IFACE=eth0)
 stop  on shutdown
 
+respawn
+
 script
   export NODE_ENV="production"
   exec /usr/bin/coffee /root/applications/$name/website.coffee >> /root/logs/$name/website.coffee 2>&1
