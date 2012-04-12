@@ -24,9 +24,6 @@ curl https://raw.github.com/Enome/linode-deployment/master/redis.sh | sh
 # Varnish ( reserved proxy )
 curl https://raw.github.com/Enome/linode-deployment/master/varnish.sh | sh
 
-# Upstart
-curl https://raw.github.com/Enome/linode-deployment/master/upstart.sh | sh
-
 # Coffee-script
 npm install -g coffee-script
 
