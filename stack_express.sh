@@ -28,7 +28,3 @@ curl https://raw.github.com/Enome/linode-deployment/master/varnish.sh | sh
 npm install -g coffee-script
 
 # Firewall
-
-# Deployment
-curl https://raw.github.com/Enome/linode-deployment/master/add_app.sh > /root/add_app.sh
-chmod +x /root/add_app.sh
