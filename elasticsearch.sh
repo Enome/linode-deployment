@@ -12,8 +12,28 @@ rm elasticsearch.tar.gz
 sudo mv elasticsearch-* elasticsearch
 sudo mv elasticsearch /usr/local/share
 
-curl -L http://github.com/elasticsearch/elasticsearch-servicewrapper/tarball/master | tar -xz
-mv *servicewrapper*/service /usr/local/share/elasticsearch/bin/
-rm -Rf *servicewrapper*
-sudo /usr/local/share/elasticsearch/bin/service/elasticsearch install
-sudo ln -s `readlink -f /usr/local/share/elasticsearch/bin/service/elasticsearch` /usr/local/bin/rcelasticsearch
+cat > /etc/init/elasticsearch.conf <<EOF
+# ElasticSearch Service
+
+description     "ElasticSearch"
+
+start on (net-device-up
+          and local-filesystems
+          and runlevel [2345])
+
+stop on runlevel [016]
+
+respawn limit 10 5
+
+env ES_HOME=/usr/local/share/elasticsearch
+env ES_MIN_MEM=256m
+env ES_MAX_MEM=2g
+
+console output
+
+script
+  /usr/local/share/elasticsearch/bin/elasticsearch -f
+end script
+EOF
+
+start elasticsearch
