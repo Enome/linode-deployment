@@ -1,9 +1,5 @@
 cd ~
-sudo apt-get install unzip
-sudo apt-get install python-software-properties -y
-sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
-sudo apt-get update
-sudo apt-get install sun-java6-jre sun-java6-plugin -y
+sudo apt-get install openjdk-7-jre -y
 
 wget https://github.com/downloads/elasticsearch/elasticsearch/elasticsearch-0.19.4.tar.gz -O elasticsearch.tar.gz
 

@@ -27,4 +27,7 @@ curl https://raw.github.com/Enome/linode-deployment/master/varnish.sh | sh
 # Coffee-script
 npm install -g coffee-script
 
+# Elasticsearch
+curl https://raw.github.com/Enome/linode-deployment/master/elasticsearch.sh | sh
+
 # Firewall
